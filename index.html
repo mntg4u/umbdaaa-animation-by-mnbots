@@ -1,128 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang=en>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UMP DAA UMPADAAA</title>
-    <style>
-        body {
-            margin: 0;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background: radial-gradient(circle, #ff0000, #ff7300, #ffeb00, #00ff00, #0099ff, #6a00ff, #ff00aa);
-            animation: bgFlare 1s infinite alternate ease-in-out;
-            filter: contrast(3) brightness(2) saturate(3);
-        }
-
-        @keyframes bgFlare {
-            0% { filter: brightness(1) contrast(1); }
-            100% { filter: brightness(3) contrast(3); }
-        }
-
-        h1 {
-            font-size: 6rem;
-            color: white;
-            text-transform: uppercase;
-            text-shadow: 0 0 50px white, 0 0 100px red;
-            animation: pulse 0.5s infinite alternate, flicker 0.3s infinite alternate, glitch 1s infinite linear;
-        }
-
-        @keyframes glitch {
-            0%, 100% { transform: translateX(0); }
-            25% { transform: translateX(-10px); }
-            50% { transform: translateX(10px); }
-            75% { transform: translateX(-10px); }
-        }
-
-        .logo {
-            width: 300px;
-            height: 300px;
-            background: url('https://i.ibb.co/qLbX2qd4/mnbots.jpg') no-repeat center center;
-            background-size: cover;
-            border-radius: 50%;
-            box-shadow: 0 0 100px white;
-            animation: spin 1s infinite linear, glow 0.5s infinite alternate, shake 0.2s infinite;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        @keyframes shake {
-            0%, 100% { transform: translateX(0); }
-            50% { transform: translateX(10px); }
-        }
-
-        .electricity {
-            position: absolute;
-            width: 100px;
-            height: 100px;
-            background: rgba(0, 255, 255, 0.8);
-            border-radius: 50%;
-            box-shadow: 0 0 50px cyan;
-            animation: zap 0.2s infinite;
-        }
-
-        @keyframes zap {
-            0% { transform: scale(1); opacity: 1; }
-            100% { transform: scale(1.5); opacity: 0; }
-        }
-
-        .portal {
-            position: absolute;
-            width: 150px;
-            height: 150px;
-            background: radial-gradient(circle, rgba(0,0,255,0.8), rgba(0,0,255,0.1));
-            border-radius: 50%;
-            box-shadow: 0 0 100px blue;
-            animation: swirl 1s infinite linear;
-        }
-
-        @keyframes swirl {
-            0% { transform: rotate(0deg) scale(1); }
-            100% { transform: rotate(360deg) scale(1.2); }
-        }
-    </style>
+<meta charset=UTF-8>
+<meta name=viewport content="width=device-width, initial-scale=1.0">
+<title>UMP DAA UMPADAAA</title>
+<style>body{margin:0;overflow:hidden;display:flex;flex-direction:column;justify-content:center;align-items:center;height:100vh;background:radial-gradient(circle,#ff0000,#ff7300,#ffeb00,#00ff00,#0099ff,#6a00ff,#ff00aa);animation:bgFlare 1s infinite alternate ease-in-out;filter:contrast(3) brightness(2) saturate(3)}@keyframes bgFlare{0%{filter:brightness(1) contrast(1)}100%{filter:brightness(3) contrast(3)}}h1{font-size:6rem;color:white;text-transform:uppercase;text-shadow:0 0 50px white,0 0 100px red;animation:pulse .5s infinite alternate,flicker .3s infinite alternate,glitch 1s infinite linear}@keyframes glitch{0%,100%{transform:translateX(0)}25%{transform:translateX(-10px)}50%{transform:translateX(10px)}75%{transform:translateX(-10px)}}.logo{width:300px;height:300px;background:url('https://i.ibb.co/qLbX2qd4/mnbots.jpg') no-repeat center center;background-size:cover;border-radius:50%;box-shadow:0 0 100px white;animation:spin 1s infinite linear,glow .5s infinite alternate,shake .2s infinite}@keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}@keyframes shake{0%,100%{transform:translateX(0)}50%{transform:translateX(10px)}}.electricity{position:absolute;width:100px;height:100px;background:rgba(0,255,255,0.8);border-radius:50%;box-shadow:0 0 50px cyan;animation:zap .2s infinite}@keyframes zap{0%{transform:scale(1);opacity:1}100%{transform:scale(1.5);opacity:0}}.portal{position:absolute;width:150px;height:150px;background:radial-gradient(circle,rgba(0,0,255,0.8),rgba(0,0,255,0.1));border-radius:50%;box-shadow:0 0 100px blue;animation:swirl 1s infinite linear}@keyframes swirl{0%{transform:rotate(0deg) scale(1)}100%{transform:rotate(360deg) scale(1.2)}}</style>
 </head>
 <body>
-    <div class="logo"></div>
-    <h1>UMP DAA UMPADAAA MUCHI MUTTY UMB DAAA</h1>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const text = document.querySelector("h1");
-            let colors = ["#ff0000", "#00ff00", "#0000ff", "#ff00ff", "#ffff00", "#00ffff"];
-            let index = 0;
-            
-            setInterval(() => {
-                text.style.color = colors[index];
-                text.style.transform = `scale(${1 + Math.random() * 0.5}) rotate(${Math.random() * 20 - 10}deg)`;
-                index = (index + 1) % colors.length;
-            }, 100);
-
-            setInterval(() => {
-                let electricity = document.createElement("div");
-                electricity.classList.add("electricity");
-                electricity.style.left = `${Math.random() * window.innerWidth}px`;
-                electricity.style.top = `${Math.random() * window.innerHeight}px`;
-                document.body.appendChild(electricity);
-                setTimeout(() => electricity.remove(), 200);
-            }, 50);
-
-            setInterval(() => {
-                let portal = document.createElement("div");
-                portal.classList.add("portal");
-                portal.style.left = `${Math.random() * window.innerWidth}px`;
-                portal.style.top = `${Math.random() * window.innerHeight}px`;
-                document.body.appendChild(portal);
-                setTimeout(() => portal.remove(), 1000);
-            }, 500);
-        });
-    </script>
+<div class=logo></div>
+<h1>UMP DAA UMPADAAA MUCHI MUTTY UMB DAAA</h1>
+<script>document.addEventListener("DOMContentLoaded",()=>{const text=document.querySelector("h1");let colors=["#ff0000","#00ff00","#0000ff","#ff00ff","#ffff00","#00ffff"];let index=0;setInterval(()=>{text.style.color=colors[index];text.style.transform=`scale(${1+Math.random()*0.5})rotate(${Math.random()*20-10}deg)`;index=(index+1)%colors.length;},100);setInterval(()=>{let electricity=document.createElement("div");electricity.classList.add("electricity");electricity.style.left=`${Math.random()*window.innerWidth}px`;electricity.style.top=`${Math.random()*window.innerHeight}px`;document.body.appendChild(electricity);setTimeout(()=>electricity.remove(),200);},50);setInterval(()=>{let portal=document.createElement("div");portal.classList.add("portal");portal.style.left=`${Math.random()*window.innerWidth}px`;portal.style.top=`${Math.random()*window.innerHeight}px`;document.body.appendChild(portal);setTimeout(()=>portal.remove(),1000);},500);});</script>
 </body>
 </html>
